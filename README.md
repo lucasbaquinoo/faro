@@ -64,9 +64,11 @@ Frontend Application (with Faro SDK)
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/lucasbaquinoo/faro.git
+git clone <your-repository-url>
 cd faro
 ```
+
+Replace `<your-repository-url>` with the actual repository URL.
 
 ### 2. Start the Stack
 
@@ -151,7 +153,7 @@ npm install @grafana/faro-web-sdk
 import { initializeFaro } from '@grafana/faro-web-sdk';
 
 initializeFaro({
-  url: 'http://localhost:12347/collect',
+  url: 'http://localhost:12347/collect',  // Default Faro receiver endpoint
   app: {
     name: 'your-app-name',
     version: '1.0.0',
@@ -159,6 +161,8 @@ initializeFaro({
   },
 });
 ```
+
+**Note:** The Faro receiver in Alloy listens on port 12347 and the `/collect` endpoint is the default path for receiving telemetry data.
 
 ### 3. View Data in Grafana
 
